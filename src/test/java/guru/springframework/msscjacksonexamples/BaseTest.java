@@ -1,12 +1,18 @@
 package guru.springframework.msscjacksonexamples;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.msscjacksonexamples.model.BeerDto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 public class BaseTest {
+
+    @Autowired
+    ObjectMapper objectMapper;
+
     BeerDto getDto(){
         return  BeerDto.builder()
                 .beerName("BeerName")
